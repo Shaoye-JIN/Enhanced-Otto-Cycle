@@ -15,7 +15,7 @@ These 2 limitations cause an error in the calculation of thermodynamic conversio
 
 ## main idea
 To solve these 2 limitations, the Enhanced Otto Cycle (EOC) is proposed.
-1)  The chemical equilibrium is additionally considered.
+1)  The chemical equilibrium is considered.
 
     The original combustion process is a constant-volume heat addition process.
     In EOC it is replaced by a constant-volume adiabatic combustion process.
