@@ -8,7 +8,7 @@ The original Otto cycle has 2 limitations:
 1)  Only the thermal equilibrium and mechanical equilibrium are considered (temperature transfer and pressure balance). 
     The chemical equilibrium is not considered (chemical energy).
 
-2)  The specific heat ratio is constant;
+2)  The specific heat ratio is constant.
     In fact, the specific heat ratio is temperature-dependent.
 
 These 2 limitations cause an error in the calculation of thermodynamic conversion efficiency.
