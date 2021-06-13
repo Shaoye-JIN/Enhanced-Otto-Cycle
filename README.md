@@ -34,6 +34,7 @@ Hence, the calculation with EOC is still universal.
 The following papers describe the detailed development and application of EOC.
 
 [1] Jin S, Deng J, Gong X, Li L. Thermodynamic analysis on factors influencing the thermal conversion efficiency of the argon power cycle engine. Transactions of CSICE 2020;38:351–8. https://doi.org/10.16236/j.cnki.nrjxb.202004046.
+
 [2] Jin S, Deng J, Li L. Thermodynamic and Chemical Analysis of the Influence of Working Substances on the Argon Power Cycle. SAE Technical Paper 2021-01-0447, 2021. https://doi.org/10.4271/2021-01-0447.
 
 Ref [1] is the initiation of the idea of EOC. 
