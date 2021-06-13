@@ -1,19 +1,7 @@
-# -*- coding: utf-8 -*-
-"""
-Created 2021.03.04
-by Jin, Shaoye
+# Enhanced Otto Cycle
+# [1] Jin S. https://doi.org/10.16236/j.cnki.nrjxb.202004046
+# [2] Jin S. https://doi.org/10.4271/2021-01-0447
 
-Modified 2021.03.14
-by Jin, Shaoye
-
-1. Otto cycle, expension process, changed from UV to SV
-2. add inputs: step number, N
-
-Modified 2021.03.26
-by Jin, Shaoye
-
-1. add LHV output
-"""
 
 import numpy   as np
 import cantera as ct
