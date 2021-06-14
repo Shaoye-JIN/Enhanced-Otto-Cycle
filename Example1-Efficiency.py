@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jun 14 10:13:28 2021
-
-@author: DrJin
-"""
-
 import EnhancedOttoCycle as EOC
 import matplotlib.pyplot as plt
 

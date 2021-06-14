@@ -10,9 +10,7 @@ import cantera as ct
 
 def Gen_Comp(fuel:str,Lbd:float,OR:float,diluent:str='N2',DR:float=0.79,):
     '''
-    This function is used to generate the composition of reactants in Cantera 
-    format based on the widely used parameters in the field of engine, such as
-    excess oxygen ratio, dilution ratio, and so on.
+    This function is used to generate the composition of reactants in Cantera format based on the widely used parameters in the field of engine, such as excess oxygen ratio, dilution ratio, and so on.
     
     Parameters
     ----------
@@ -45,9 +43,7 @@ def Gen_Comp(fuel:str,Lbd:float,OR:float,diluent:str='N2',DR:float=0.79,):
 
 def Otto(CR:float, P1:float, T1:float, Comp:str, N:int=2, Mech:str='gri30.cti'):
     '''
-    This function is used to calculate the whole process of Enhanced Otto Cyc-
-    le. All the thermochemical parameters are returned, including T, P, V, H,
-    U, S, molar fractions and the efficiency of EOC.
+    This function is used to calculate the whole process of Enhanced Otto Cycle.
     
     Parameters
     ----------
