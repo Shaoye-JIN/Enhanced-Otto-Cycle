@@ -8,7 +8,7 @@ import numpy   as np
 import cantera as ct
 
 
-def Gen_Comp(fuel:str,Lbd:float,OR:float,diluent:str='N2',DR:float=0.79,):
+def Gen_Comp(fuel:str,Lbd:float,OR:float,diluent:str='N2',DR:float=0.79):
     '''
     This function is used to generate the composition of reactants in Cantera format based on the widely used parameters in the field of engine, such as excess oxygen ratio, dilution ratio, and so on.
     
