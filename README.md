@@ -6,8 +6,9 @@ The thermal conversion efficiency function of the Otto cycle is widely used to e
 
 The original Otto cycle has 2 limitations:
 1)  The internal energy contains 4 types of energies, namely the kinetic energy of thermal molecular motion, potential energy of molecular interaction, 
-    chemical energy, and nuclear energy. Usually, in thermodynamics, only the kinetic energy of thermal molecular motion is considered. However, 
-    the chemical energy is also important for research in internal combustion engine.
+    chemical energy, and nuclear energy. 
+    Usually, in thermodynamics, only the kinetic energy of thermal molecular motion is considered. 
+    However, the chemical energy is also important for research in internal combustion engine.
 
 2)  The specific heat ratio is constant.
     In fact, the specific heat ratio is temperature-dependent.
@@ -27,9 +28,14 @@ To solve these 2 limitations, the Enhanced Otto Cycle (EOC) is proposed.
 2)  The thermodynamic files containing temperature-dependent parameters are used, which is the same as those used in the chemical kinetic study.
 
 ## benefits
-The thermodynamic theory is universal and therefore can be considered as the theoretical boundary.
-The chemical equilibrium also obeys the second law of thermodynamics.
-Hence, the calculation with EOC is still universal.
+1)  The thermodynamic theory is universal and therefore can be considered as the theoretical boundary.
+    The chemical equilibrium also obeys the second law of thermodynamics.
+    Hence, the calculation with EOC is still universal.
+    
+2)  With the consideration of chemical equilibrium, the thermodynamic efficiency of EOC is usually lower than that of the original Otto cycle.
+
+3)  Therefore, the efficiency of EOC is still a boundary which a real internal combustion engine can never exceed. 
+    Meanwhile, it is lower than that of the Otto cycle, which makes it more precise as a upper limitation.
 
 ## published papers
 The following papers describe the detailed development and application of EOC.
