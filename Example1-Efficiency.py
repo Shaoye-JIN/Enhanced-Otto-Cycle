@@ -4,7 +4,7 @@ import numpy             as np
 
 Fuel    = 'H2'
 LBD     = 1
-OR      = 0.5
+OR      = 0.5                                   # H2 + 0.5 O2 = H2O
 Diluent = 'Ar'
 DR      = [0.9565, 0.8852, 0.7925, 0.5385, 0]
 CR      = [4, 5.5, 7, 9.5, 12, 14.5]
