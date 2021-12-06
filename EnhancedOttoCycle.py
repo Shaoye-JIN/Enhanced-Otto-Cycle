@@ -10,20 +10,23 @@ import cantera as ct
 
 def Gen_Comp(fuel:str,Lbd:float,OR:float,diluent:str='N2',DR:float=0.79):
     '''
-    This function is used to generate the composition of reactants in Cantera format based on the widely used parameters in the field of engine, such as excess oxygen ratio, dilution ratio, and so on.
+    1. This function is used to generate the composition of reactants in Cantera format 
+       with the widely used parameters in the field of internal combustion engines, 
+       including excess oxygen ratio, dilution ratio, and so on.
+    2. Please modify this function by yourself if it cannot meet your requirements.
     
     Parameters
     ----------
     fuel : str
         name of fuel.
     Lbd : float
-        excess oxygen ratio.
+        excess oxygen ratio, (O2 supplied) / (O2 needed for stoichiometric mixture).
     OR : float
-        oxygen ratio in stoichiometric mixture, O2/fuel.
+        oxygen molar ratio in stoichiometric mixture, O2 / fuel.
     diluent : str, optional
         name of diluent. The default is N2.
     DR : float, optional
-        dilution ratio, D/(D + O2), (0, 1). The default is 0.79.
+        dilution molar ratio, Diluent /(Diluent + O2), (0, 1). The default is 0.79.
 
     Returns
     -------
@@ -54,11 +57,13 @@ def Otto(CR:float, P1:float, T1:float, Comp:str, N:int=2, Mech:str='gri30.cti'):
     T1 : float
         initial temperature, degC.
     Comp : str
-        composition of reactants in Cantera format.
+        composition of reactants in Cantera format, which can be get from the function Gen_Comp
+        or can be written directly following the requirement of Cantera.
     N : int, optional
         step number of compression and expension process.
         The minimum value is 2, which means at least 2 states are need for one process.
-        The bigger the value N is, the more details are avaiable in the processes.
+        N does not influence the calculation results of the final states of the processes,
+        but the bigger the value N is, the more data points are avaiable in the processes. 
     Mech : str, optional
         mechanism file. The default is 'gri30.cti'.
 
@@ -114,15 +119,15 @@ def Otto(CR:float, P1:float, T1:float, Comp:str, N:int=2, Mech:str='gri30.cti'):
     V12 = np.linspace(V1,V2,N)          # specific volume in the compression process
     
     for i in range(N):                  # get parameters in the compression process
-        gas.SV = S1,V12[i]              # S and V at step i in the compression process
+        gas.SV = S1,V12[i]              # S and V at Step i in the compression process
         
-        P[i]   = gas.P                  # P at step i, Pa
-        T[i]   = gas.T                  # T at step i, K
-        V[i]   = gas.volume_mass        # V at step i, m3/kg
-        H[i]   = gas.enthalpy_mass      # H at step i, J/kg
-        U[i]   = gas.int_energy_mass    # U at step i, J/kg
-        S[i]   = gas.entropy_mass       # S at step i, J/K/kg
-        X[i,:] = gas.X                  # X at step i
+        P[i]   = gas.P                  # P at Step i, Pa
+        T[i]   = gas.T                  # T at Step i, K
+        V[i]   = gas.volume_mass        # V at Step i, m3/kg
+        H[i]   = gas.enthalpy_mass      # H at Step i, J/kg
+        U[i]   = gas.int_energy_mass    # U at Step i, J/kg
+        S[i]   = gas.entropy_mass       # S at Step i, J/K/kg
+        X[i,:] = gas.X                  # X at Step i
     
     # Process 2-3: constant-volume adiabatic combustion
     gas.equilibrate('UV')               # constant-volume adiabatic combustion
@@ -132,16 +137,16 @@ def Otto(CR:float, P1:float, T1:float, Comp:str, N:int=2, Mech:str='gri30.cti'):
     V34 = V12[::-1]                     # specific volume in the expansion process
     
     for i in range(N,2*N):              # get parameters in the expansion process
-        gas.SV = S3,V34[i-N]            # S and V at step i in the expansion process
+        gas.SV = S3,V34[i-N]            # S and V at Step i in the expansion process
         gas.equilibrate('SV')           # isentropic expansion
         
-        P[i]   = gas.P                  # P at step i
-        T[i]   = gas.T                  # T at step i
-        V[i]   = gas.volume_mass        # V at step i
-        H[i]   = gas.enthalpy_mass      # H at step i
-        U[i]   = gas.int_energy_mass    # U at step i
-        S[i]   = gas.entropy_mass       # S at step i
-        X[i,:] = gas.X                  # X at step i
+        P[i]   = gas.P                  # P at Step i
+        T[i]   = gas.T                  # T at Step i
+        V[i]   = gas.volume_mass        # V at Step i
+        H[i]   = gas.enthalpy_mass      # H at Step i
+        U[i]   = gas.int_energy_mass    # U at Step i
+        S[i]   = gas.entropy_mass       # S at Step i
+        X[i,:] = gas.X                  # X at Step i
     
     U4=gas.int_energy_mass              # U at the end of expansion
     
