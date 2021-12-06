@@ -5,8 +5,9 @@ This work is based on the Otto cycle, which is a thermodynamic cycle.
 The thermal conversion efficiency function of the Otto cycle is widely used to explore the thermodynamic boundary of the efficiencies of real engines.
 
 The original Otto cycle has 2 limitations:
-1)  Only the thermal equilibrium and mechanical equilibrium are considered (temperature transfer and pressure balance). 
-    The chemical equilibrium is not considered (chemical energy).
+1)  The internal energy contains 4 types of energies, namely the kinetic energy of thermal molecular motion, potential energy of molecular interaction, 
+    chemical energy, and nuclear energy. Usually, in thermodynamics, only the kinetic energy of thermal molecular motion is considered. However, 
+    the chemical energy is also important for research in internal combustion engine.
 
 2)  The specific heat ratio is constant.
     In fact, the specific heat ratio is temperature-dependent.
