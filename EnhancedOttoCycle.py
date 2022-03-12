@@ -8,7 +8,7 @@ import numpy   as np
 import cantera as ct
 
 
-def Gen_Comp(fuel:str,Lbd:float,OR:float,diluent:str='N2',DR:float=0.79):
+def Gen_Comp(fuel:str,Lbd:float,OR:float,diluent:str='N2',DR:float=0.79,WR:float=0):
     '''
     1. This function is used to generate the composition of reactants in Cantera format 
        with the widely used parameters in the field of internal combustion engines, 
@@ -27,6 +27,8 @@ def Gen_Comp(fuel:str,Lbd:float,OR:float,diluent:str='N2',DR:float=0.79):
         name of diluent. The default is N2.
     DR : float, optional
         dilution molar ratio, Diluent /(Diluent + O2), (0, 1). The default is 0.79.
+    WR : float, optional
+        water ratio, H2O / (Diluent + O2). The default is 0.
 
     Returns
     -------
@@ -35,12 +37,12 @@ def Gen_Comp(fuel:str,Lbd:float,OR:float,diluent:str='N2',DR:float=0.79):
 
     '''
     
-    nD  = DR                # amount of diluents
-    nO2 = 1-DR              # amount of O2
-    nF  = nO2/OR/Lbd        # amount of fuel
-    
-    Comp=fuel+':'+"%.6f"%nF+',O2:'+"%.6f"%nO2+','+diluent+':'+"%.6f"%nD
-                            # molar fraction in Cantera format
+    nD   = DR                # amount of diluents
+    nO2  = 1-DR              # amount of O2
+    nF   = nO2/OR/Lbd        # amount of fuel
+    nH2O = WR
+    Comp = fuel+':'+"%.6f"%nF+',O2:'+"%.6f"%nO2+','+diluent+':'+"%.6f"%nD+',H2O:'+"%.6f"%nH2O
+                             # molar fraction in Cantera format
     return Comp
 
 
